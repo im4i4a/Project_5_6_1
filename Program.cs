@@ -7,11 +7,11 @@ namespace Project_5_6_1
         static void Main(string[] args)
         {
             (string Name, string SecondName, int Age, string[] NamePet, string[] FavColor)
-                 User =  Questionnaire();
+                 User = Questionnaire();
 
             OutputToTheScreen(User);
 
-            
+
         }
 
         static void OutputToTheScreen((string Name, string SecondName, int Age, string[] NamePet, string[] FavColor) user)
@@ -36,7 +36,7 @@ namespace Project_5_6_1
         }
         static (string Name, string SecondName, int Age, string[] NamePet, string[] FavColor) Questionnaire()
         {
-            (string Name, string SecondName, int Age, string[] NamePet, string[] FavColor) 
+            (string Name, string SecondName, int Age, string[] NamePet, string[] FavColor)
                 User = ("", "", 0, Array.Empty<string>(), Array.Empty<string>());
 
             Console.Write("Введите ваше имя: ");
@@ -55,7 +55,7 @@ namespace Project_5_6_1
             }
             User.Age = CorrAge;
             Console.WriteLine("Есть ли у вас домашний питомец? да/нет");
-            while (true) 
+            while (true)
             {
                 string answerPet = Console.ReadLine();
                 switch (answerPet)
@@ -71,18 +71,16 @@ namespace Project_5_6_1
                         }
 
                         User.NamePet = ArrPet(corrCountPet);
-                        
+
                         foreach (string name in User.NamePet)
                         {
                             Console.WriteLine(name);
                         }
-
-
                         break;
-       
+
                     case "нет" or "Нет":
-
                         break;
+                    
                     default:
                         Console.WriteLine("Введено не корректное значение");
                         continue;
@@ -129,8 +127,9 @@ namespace Project_5_6_1
 
             return arrNamePet;
         }
-        static bool CheckNum(string number,out int correctNum) {
-            if (int.TryParse(number,out int result))
+        static bool CheckNum(string number, out int correctNum)
+        {
+            if (int.TryParse(number, out int result))
             {
                 if (result > 0)
                 {
